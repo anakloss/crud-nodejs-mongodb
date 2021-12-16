@@ -1,0 +1,57 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+  <div class="row">
+
+    <!-- form -->
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="post">
+            <div class="mb-3">
+              <input type="text" name="title" value="" placeholder="Insert a title" class="form-control">
+            </div>
+            <div class="mb-3">
+              <textarea name="description" cols="80" placeholder="Insert a description" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- list -->
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover align-middle">
+        <thead>
+          <tr>
+            <th>Nº</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% tasks.forEach((task, i) => { %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= task.title %></td>
+              <td><%= task.description %></td>
+              <td>
+                <a href="/turn/<%= task._id %>"
+                    class="btn <%= task.status ? 'btn-success' : 'btn-dark' %>">
+                  Done
+                </a>
+                <a href="/delete/<%= task._id %>" class="btn btn-danger">Delete</a>
+                <a href="/edit/<%= task._id %>" class="btn btn-info">Edit</a>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/_footer') %>

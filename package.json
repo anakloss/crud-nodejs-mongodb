@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/anak492/nodejs-mongodb.git"
+  },
+  "keywords": [],
+  "author": "Ana Kloss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/anak492/nodejs-mongodb/issues"
+  },
+  "homepage": "https://bitbucket.org/anak492/nodejs-mongodb#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.2",
+    "mongoose": "^6.1.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
